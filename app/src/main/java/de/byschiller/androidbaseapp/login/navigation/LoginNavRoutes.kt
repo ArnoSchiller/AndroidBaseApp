@@ -1,7 +1,6 @@
 package de.byschiller.androidbaseapp.login.navigation
 
 import de.byschiller.androidbaseapp.R
-import de.byschiller.androidbaseapp.navigation.NavRoutes
 
 sealed class LoginNavRoutes(val route: String, val title: Int) {
 

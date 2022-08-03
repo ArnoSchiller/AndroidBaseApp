@@ -18,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import de.byschiller.androidbaseapp.login.navigation.LoginNavRoutes
 import de.byschiller.androidbaseapp.navigation.NavRoutes
+import de.byschiller.androidbaseapp.navigation.NavigationContainer
 import de.byschiller.androidbaseapp.ui.theme.AndroidBaseAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -50,9 +51,9 @@ fun Home(navController: NavHostController) {
             // pass parameter to route
             Button(onClick = {
                 // version 1
-                //navController.navigate(NavRoutes.Greeting.route + "/exampleName")
+                navController.navigate(NavRoutes.Greeting.route + "/exampleName")
                 // version 2
-                navController.navigate(NavRoutes.Greeting.route + "?username=exampleName")
+                //navController.navigate(NavRoutes.Greeting.route + "?username=exampleName")
             }) {
                 Text(text = "Go to ${stringResource(id = NavRoutes.Greeting.title)}")
             }
