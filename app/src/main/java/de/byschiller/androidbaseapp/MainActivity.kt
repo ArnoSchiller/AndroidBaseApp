@@ -47,7 +47,12 @@ fun Home(navController: NavHostController) {
             Text(text = "This is ${stringResource(id = NavRoutes.Home.title)}!")
 
             // pass parameter to route
-            Button(onClick = { navController.navigate(NavRoutes.Greeting.route + "/exampleName") }) {
+            Button(onClick = {
+                // version 1
+                //navController.navigate(NavRoutes.Greeting.route + "/exampleName")
+                // version 2
+                navController.navigate(NavRoutes.Greeting.route + "?username=exampleName")
+            }) {
                 Text(text = "Go to ${stringResource(id = NavRoutes.Greeting.title)}")
             }
         }
