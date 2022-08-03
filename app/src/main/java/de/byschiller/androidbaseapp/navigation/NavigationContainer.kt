@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import androidx.navigation.navDeepLink
 import de.byschiller.androidbaseapp.navigation.NavRoutes
 
 @Composable
@@ -15,6 +16,7 @@ fun NavigationContainer() {
         navController = navController,
         startDestination = NavRoutes.Home.route,
     ) {
+        val uri = "https://www.example.com"
 
         composable(NavRoutes.Home.route) {
             Home(navController = navController)
@@ -33,6 +35,7 @@ fun NavigationContainer() {
         // this provides a default value, parameter of view must not be nullable
         composable(
             route = NavRoutes.Greeting.route + "?username={username}",
+            deepLinks = listOf(navDeepLink { uriPattern = "$uri/{username}" }),
             arguments = listOf(navArgument("username") { defaultValue = "me" })
         ) { backStackEntry ->
 
