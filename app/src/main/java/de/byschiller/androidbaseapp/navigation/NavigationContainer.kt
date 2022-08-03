@@ -1,11 +1,16 @@
 package de.byschiller.androidbaseapp
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import androidx.navigation.navDeepLink
+import de.byschiller.androidbaseapp.login.navigation.LoginNavRoutes
+import de.byschiller.androidbaseapp.login.navigation.loginGraph
 import de.byschiller.androidbaseapp.navigation.NavRoutes
 
 @Composable
@@ -43,5 +48,7 @@ fun NavigationContainer() {
             Greeting(navController = navController, userName)
         }
 
+        // include navigation graphs
+        loginGraph(navController)
     }
 }

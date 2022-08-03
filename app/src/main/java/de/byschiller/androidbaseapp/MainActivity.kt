@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
+import de.byschiller.androidbaseapp.login.navigation.LoginNavRoutes
 import de.byschiller.androidbaseapp.navigation.NavRoutes
 import de.byschiller.androidbaseapp.ui.theme.AndroidBaseAppTheme
 
@@ -54,6 +55,13 @@ fun Home(navController: NavHostController) {
                 navController.navigate(NavRoutes.Greeting.route + "?username=exampleName")
             }) {
                 Text(text = "Go to ${stringResource(id = NavRoutes.Greeting.title)}")
+            }
+
+            // test navGraph
+            Button(onClick = {
+                navController.navigate(LoginNavRoutes.Username.route)
+            }) {
+                Text(text = "Go to ${stringResource(id = LoginNavRoutes.Username.title)}")
             }
         }
     }
