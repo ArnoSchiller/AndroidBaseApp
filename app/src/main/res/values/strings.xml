@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidBaseApp</string>
+    <string name="home_title">Home</string>
+    <string name="greeting_title">Greeting</string>
 </resources>
