@@ -1,6 +1,7 @@
 package de.byschiller.androidbaseapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
@@ -16,14 +17,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
+import dagger.hilt.android.AndroidEntryPoint
 import de.byschiller.androidbaseapp.login.navigation.LoginNavRoutes
 import de.byschiller.androidbaseapp.navigation.NavRoutes
 import de.byschiller.androidbaseapp.navigation.NavigationContainer
 import de.byschiller.androidbaseapp.ui.theme.AndroidBaseAppTheme
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var simpleString: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Log.d("DI", simpleString)
         setContent {
             AndroidBaseAppTheme {
                 // A surface container using the 'background' color from the theme
